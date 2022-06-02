@@ -17,8 +17,8 @@ public:
         color = col;
 
         quad[0] = Logg::vec2(-size, size);
-        quad[1] = Logg::vec2(size, size);
-        quad[2] = Logg::vec2(-size, -size);
+        quad[1] = Logg::vec2(-size, -size);
+        quad[2] = Logg::vec2(size, size);
         quad[3] = Logg::vec2(size, -size);
     }
     ~Nemo()

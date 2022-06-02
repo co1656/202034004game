@@ -25,19 +25,19 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
         glfwSetWindowShouldClose(window, GL_TRUE);
 
     if (key == GLFW_KEY_UP && action == GLFW_PRESS)
-        n->MoveUp(0.01f);
+        n->MoveUp(0.0001f);
     if (key == GLFW_KEY_UP && action == GLFW_RELEASE)
         n->MoveUp(0.0f);
     if (key == GLFW_KEY_DOWN && action == GLFW_PRESS)
-        n->MoveUp(-0.01f);
+        n->MoveUp(-0.0001f);
     if (key == GLFW_KEY_DOWN && action == GLFW_RELEASE)
         n->MoveUp(0.0f);
     if (key == GLFW_KEY_RIGHT && action == GLFW_PRESS)
-        n->MoveRight(0.01f);
+        n->MoveRight(0.0001f);
     if (key == GLFW_KEY_RIGHT && action == GLFW_RELEASE)
         n->MoveRight(0.0f);
     if (key == GLFW_KEY_LEFT && action == GLFW_PRESS)
-        n->MoveRight(-0.01f);
+        n->MoveRight(-0.0001f);
     if (key == GLFW_KEY_LEFT && action == GLFW_RELEASE)
         n->MoveRight(0.0f);
 }
@@ -84,8 +84,16 @@ int main(void)
                     glfwSetWindowShouldClose(window, GL_TRUE);
                 }
             }
-
         }
+        for (int i = 0; i < 24; i++)
+        {
+            if (n->quad[2].x < m->quad[i][0].x && m->quad[i][2].x > n->quad[1].x && n->quad[2].y < m->quad[i][1].y && m->quad[0][i].y > n->quad[1].y)
+            {
+                    printf("Ãæµ¹!!\n");
+            }
+        }
+        
+
 
         n->Render();
         e->Render();
