@@ -14,8 +14,8 @@ public:
         coord = Logg::vec2(0, 0);
         color = col;
 
-        quad[0] = Logg::vec2(-0.9, -0.8);
-        quad[1] = Logg::vec2(-0.8, -0.8);
+        quad[0] = Logg::vec2(-0.9, -0.7);
+        quad[1] = Logg::vec2(-0.8, -0.7);
         quad[2] = Logg::vec2(-0.9, -0.9);
         quad[3] = Logg::vec2(-0.8, -0.9);
     }

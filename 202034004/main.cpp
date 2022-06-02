@@ -25,19 +25,19 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
         glfwSetWindowShouldClose(window, GL_TRUE);
 
     if (key == GLFW_KEY_UP && action == GLFW_PRESS)
-        n->MoveUp(0.0001f);
+        n->MoveUp(0.01f);
     if (key == GLFW_KEY_UP && action == GLFW_RELEASE)
         n->MoveUp(0.0f);
     if (key == GLFW_KEY_DOWN && action == GLFW_PRESS)
-        n->MoveUp(-0.0001f);
+        n->MoveUp(-0.01f);
     if (key == GLFW_KEY_DOWN && action == GLFW_RELEASE)
         n->MoveUp(0.0f);
     if (key == GLFW_KEY_RIGHT && action == GLFW_PRESS)
-        n->MoveRight(0.0001f);
+        n->MoveRight(0.01f);
     if (key == GLFW_KEY_RIGHT && action == GLFW_RELEASE)
         n->MoveRight(0.0f);
     if (key == GLFW_KEY_LEFT && action == GLFW_PRESS)
-        n->MoveRight(-0.0001f);
+        n->MoveRight(-0.01f);
     if (key == GLFW_KEY_LEFT && action == GLFW_RELEASE)
         n->MoveRight(0.0f);
 }
@@ -76,9 +76,9 @@ int main(void)
 
         for (int i = 0; i < 4; i++)
         {
-            if (n->quad[2].x < e->quad[i].x && e->quad[i].x < n->quad[1].x)
+            if (n->quad[2].x < e->quad[i].x)
             {
-                if (n->quad[2].y < e->quad[i].y && e->quad[i].y < n->quad[1].y)
+                if (n->quad[0].y < e->quad[i].y)
                 {
                     printf("Clear!!\n");
                     glfwSetWindowShouldClose(window, GL_TRUE);
